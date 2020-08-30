@@ -1,8 +1,8 @@
 > ✨ Help support the maintenance of this package by [sponsoring me](https://github.com/sponsors/ryangjchandler).
 
-# Alpine Plugin Template
+# Alpine Toggle
 
-One short line about the plugin.
+Quickly toggle / negate a property in your Alpine.js components.
 
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/[repo]?label=version&style=flat-square)
 ![GitHub file size in bytes](https://img.shields.io/github/size/[repo]/dist/spruce.js?label=min%20%28no%20gzip%29&style=flat-square)
@@ -10,7 +10,17 @@ One short line about the plugin.
 
 ## About
 
-A short bit of information about the plugin and what it does.
+When you need to toggle a property in your code, you probably have something like this inside of your action:
+
+```html
+<button>very.deeply.nested[0].property = ! very.deeply.nested[0].property</button>
+```
+
+Wouldn't it be nice if you could do this instead:
+
+```html
+<button @click="$toggle('very.deeply.nested.0.property')"></button>
+```
 
 ## Installation
 
@@ -23,6 +33,43 @@ Include the following `<script>` tag in the `<head>` of your document:
 ```
 
 > **Important**: This must be added **before** loading Alpine.js when using CDN links.
+
+## Usage
+
+This plugin provides a single `$toggle` magic property that can be invoked and accepts a single argument - the dot-notation of the property you wish to toggle.
+
+```html
+<div x-data="{ foo: true }">
+    <p x-text="JSON.stringify(foo)"></p>
+    <button @click="$toggle('foo')">Toggle</button>
+</div>
+```
+
+When the button is clicked, the value of `foo` will be flipped and become `false.`
+
+### Nested properties
+
+You can also negate nested properties inside of objects:
+
+```html
+<div x-data="{ foo: { bar: true } }">
+    <p x-text="JSON.stringify(foo.bar)"></p>
+    <button @click="$toggle('foo.bar')">Toggle (nested)</button>
+</div>
+```
+
+Just pass in the dot-notation path for the property and the plugin will handle the rest.
+
+### Nested arrays
+
+If you have an array of objects, you might wish to use the index of the array too. Use the syntax below, as part of the dot-notation, to toggle something inside of an array.
+
+```html
+<div x-data="{ foo: { bar: { boo: [true] } } }">
+    <p x-text="JSON.stringify(foo.bar.boo[0])"></p>
+    <button @click="$toggle('foo.bar.boo.0')">Toggle (nested array)</button>
+</div>
+```
 
 ## Versioning
 
