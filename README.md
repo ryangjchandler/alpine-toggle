@@ -29,7 +29,7 @@ Wouldn't it be nice if you could do this instead:
 Include the following `<script>` tag in the `<head>` of your document:
 
 ``` html
-<script src="https://insert-cdn-link-here.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-toggle@0.1.0/dist/alpine-toggle.umd.js"></script>
 ```
 
 > **Important**: This must be added **before** loading Alpine.js when using CDN links.
