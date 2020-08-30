@@ -1,0 +1,2 @@
+const e={start(){if(!window.Alpine)throw new Error("Alpine is required for `alpine-toggle` to work.");Alpine.addMagicProperty("toggle",e=>function(o){let t=e.__x.$data;o.split(".").reduce((e,o)=>{e[o]&&"object"!=typeof e[o]&&(e[o]=!e[o])},t)})}},o=window.deferLoadingAlpine||(e=>e());window.deferLoadingAlpine=function(t){e.start(),o(t)};export default e;
+//# sourceMappingURL=alpine-toggle.module.js.map
