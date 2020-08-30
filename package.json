@@ -1,16 +1,16 @@
 {
-    "name": "alpine-plugin-template",
-    "description": "A simple template for Alpine.js plugins.",
+    "name": "@ryangjchandler/alpine-toggle",
+    "description": "Quickly toggle / negate a property in your Alpine.js components.",
     "license": "MIT",
     "author": "Ryan Chandler <support@ryangjchandler.co.uk>",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ryangjchandler/alpine-plugin-template"
+        "url": "https://github.com/ryangjchandler/alpine-toggle"
     },
     "source": "src/index.js",
-    "main": "dist/alpine-plugin.js",
-    "umd:main": "dist/alpine-plugin.umd.js",
-    "module": "dist/alpine-plugin.module.js",
+    "main": "dist/alpine-toggle.js",
+    "umd:main": "dist/alpine-toggle.umd.js",
+    "module": "dist/alpine-toggle.module.js",
     "scripts": {
         "build": "microbundle",
         "watch": "microbundle watch",
