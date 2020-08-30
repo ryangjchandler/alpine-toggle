@@ -11,9 +11,11 @@ const AlpineToggle = {
                 let $data = $el.__x.$data
 
                 target.split('.').reduce((acc, current) => {
-                    if (acc[current] && ! isObject(acc[current])) {
-                        acc[current] = ! acc[current]
+                    if (acc[current] && isObject(acc[current])) {
+                        return acc[current]
                     }
+
+                    acc[current] = ! acc[current]
                 }, $data)
             }
         })

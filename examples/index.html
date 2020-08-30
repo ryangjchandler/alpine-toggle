@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../dist/alpine-toggle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+</head>
+<body>
+    <div x-data="{ foo: true }">
+        <p x-text="JSON.stringify(foo)"></p>
+        <button @click="$toggle('foo')">Toggle</button>
+    </div>
+
+    <div x-data="{ foo: { bar: true } }">
+        <p x-text="JSON.stringify(foo.bar)"></p>
+        <button @click="$toggle('foo.bar')">Toggle (nested)</button>
+    </div>
+
+    <div x-data="{ foo: { bar: { boo: [true] } } }">
+        <p x-text="JSON.stringify(foo.bar.boo[0])"></p>
+        <button @click="$toggle('foo.bar.boo.0')">Toggle (nested array)</button>
+    </div>
+</body>
+</html>

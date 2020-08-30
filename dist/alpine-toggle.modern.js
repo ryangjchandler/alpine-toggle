@@ -1,2 +1,2 @@
-const e={start(){if(!window.Alpine)throw new Error("Alpine is required for `alpine-toggle` to work.");Alpine.addMagicProperty("toggle",e=>function(o){let t=e.__x.$data;o.split(".").reduce((e,o)=>{e[o]&&"object"!=typeof e[o]&&(e[o]=!e[o])},t)})}},o=window.deferLoadingAlpine||(e=>e());window.deferLoadingAlpine=function(t){e.start(),o(t)};export default e;
+const e={start(){if(!window.Alpine)throw new Error("Alpine is required for `alpine-toggle` to work.");Alpine.addMagicProperty("toggle",e=>function(t){let i=e.__x.$data;t.split(".").reduce((e,t)=>{if(e[t]&&"object"==typeof e[t])return e[t];e[t]=!e[t]},i)})}},t=window.deferLoadingAlpine||(e=>e());window.deferLoadingAlpine=function(i){e.start(),t(i)};export default e;
 //# sourceMappingURL=alpine-toggle.modern.js.map
